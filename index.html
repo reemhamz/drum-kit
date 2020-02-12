@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Drumkit Bang-A-Rang!</h1>
+
+    <audio id="a" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/clap.wav"></audio>
+    <audio id="s" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/hihat.wav"></audio>
+    <audio id="d" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/kick.wav"></audio>
+    <audio id="f" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/open-hat.wav"></audio>
+    <audio id="g" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/boom.wav"></audio>
+    <audio id="h" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/ride.wav"></audio>
+    <audio id="j" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/snare.wav"></audio>
+    <audio id="k" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/tom.wav"></audio>
+    <audio id="l" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2538470/tink.wav"></audio>
+
+    <script>
+        console.log(document.querySelector("h1").firstChild.data)
+
+        document.addEventListener("keydown", function (e) {
+            const key = e.key
+            console.log(`${key} was pressed down`)
+
+            let audio = document.querySelector("audio[id='" + key+ "']");
+            
+            audio.currentTime = 0;
+            audio.play();
+        });
+    </script>
+</body>
+
+</html>
